@@ -67,4 +67,4 @@ No es obligatorio tener todas, pero estas dos ayudan mucho con Laravel y PHP:
 ---
 
 > ✅ Resumen rápido para el taller (obligatorio):  
-> VSCode + PHP 8.x + Composer + XAMPP/Laragon (MySQL + phpMyAdmin) + navegador.
+> VSCode + PHP 8.x + Composer + XAMPP (MySQL + phpMyAdmin) + navegador.
