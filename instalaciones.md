@@ -5,7 +5,7 @@
 
 <h1 align="center">Taller: Sistema Web con Laravel 12 y MySQL</h1>
 
-En este taller desarrollaremos un sistema web básico usando **PHP Laravel 12**, **MySQL** y **phpMyAdmin**, con vistas en **Blade** y estilos con **Bootstrap**.
+En este taller desarrollaremos un sistema web usando **PHP Laravel 12**, con vistas en **Blade** y estilos con **Bootstrap**, con base de datos relacionles **MySQL** y **phpMyAdmin**
 
 ---
 
@@ -45,16 +45,7 @@ Estos deben estar instalados antes del taller:
 
 ---
 
-## 2. Herramientas RECOMENDADAS (pero no obligatorias)
-
-No son estrictamente necesarias para el taller, pero ayudan:
-
-- [Git](https://git-scm.com/)  
-  Para guardar el código con control de versiones.
-
----
-
-## 3. Extensiones mínimas para VSCode
+## 2. Extensiones mínimas para VSCode
 
 No es obligatorio tener todas, pero estas dos ayudan mucho con Laravel y PHP:
 
@@ -64,7 +55,7 @@ No es obligatorio tener todas, pero estas dos ayudan mucho con Laravel y PHP:
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)  
   Autocompletado y análisis de código PHP.
 
-### Opcionales (calidad de vida)
+### Opcionales
 
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)  
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)  
