@@ -1,123 +1,79 @@
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="120" alt="Vue Logo" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png" width="120" alt="Laravel Logo" />
+  <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" width="150" alt="MySQL Logo" />
 </p>
 
 <h1 align="center">Taller: Sistema Web con Laravel 12 y MySQL</h1>
 
-En esta guía encontrarás las **herramientas y tecnologías** necesarias para el taller de 4 a 5 horas donde desarrollaremos un sistema web básico con **PHP Laravel 12**, **MySQL** y **phpMyAdmin**, usando vistas con **Blade** y estilos con **Bootstrap o Tailwind**.
+En este taller desarrollaremos un sistema web básico usando **PHP Laravel 12**, **MySQL** y **phpMyAdmin**, con vistas en **Blade** y estilos con **Bootstrap**.
 
 ---
 
-## 1. Programas obligatorios para el taller
+## 1. Programas OBLIGATORIOS
 
-Estos sí o sí deben estar instalados antes de la clase 👇
+Estos deben estar instalados antes del taller:
 
 - [Visual Studio Code](https://code.visualstudio.com/)  
-  Editor de código principal para trabajar el proyecto Laravel.
+  Editor de código para trabajar el proyecto Laravel.
 
-- [PHP 8.x](https://www.php.net/downloads.php)  
+- **PHP 8.x**  
   Versión compatible con Laravel 12.
 
 - [Composer](https://getcomposer.org/download/)  
-  Gestor de dependencias para instalar y actualizar Laravel.
+  Para instalar Laravel y sus dependencias.
 
 - **Servidor local (uno de los dos):**
-  - [XAMPP](https://www.apachefriends.org/es/index.html)  
-    Incluye Apache, PHP y MySQL + phpMyAdmin.
-  - [Laragon](https://laragon.org/)  
-    Alternativa ligera para Windows con Apache/Nginx + MySQL.
+  - [XAMPP](https://www.apachefriends.org/es/index.html)
 
-- **MySQL / MariaDB**  
-  Ya viene dentro de XAMPP/Laragon, será nuestro motor de base de datos relacional.
+  incluye:
+  - Apache (servidor web)
+  - PHP
+  - MySQL
+  - phpMyAdmin
+
+- **MySQL**  
+  Motor de base de datos relacional (viene dentro de XAMPP).
 
 - **phpMyAdmin**  
-  Panel web para:
+  Para:
   - Crear la base de datos del sistema.
-  - Ver tablas, datos y relaciones.
-  - Probar consultas SQL.
+  - Ver tablas y datos.
+  - Revisar que las migraciones de Laravel se creen correctamente.
 
-- [Node.js (LTS)](https://nodejs.org/es/)  
-  Necesario para Vite (build de assets de Laravel) aunque en el taller usaremos Blade con CSS simple o Bootstrap.
+- **Navegador web**  
+  Chrome / Firefox / Edge para probar la aplicación.
 
 ---
 
-## 2. Herramientas recomendadas (no obligatorias, pero ayudan)
+## 2. Herramientas RECOMENDADAS (pero no obligatorias)
 
-Estas no son críticas para el taller, pero sirven para la materia completa DPWIII:
+No son estrictamente necesarias para el taller, pero ayudan:
 
 - [Git](https://git-scm.com/)  
-  Control de versiones (guardar historial del proyecto).
-
-- [Docker Desktop](https://www.docker.com/get-started)  
-  Para entornos más avanzados (no se usará en el taller rápido).
-
-- [TablePlus](https://tableplus.com/)  
-  Cliente gráfico de bases de datos (alternativa a phpMyAdmin).
-
-- [Postman](https://www.postman.com/)  
-  Útil para pruebas de APIs cuando veamos backend tipo API REST.
+  Para guardar el código con control de versiones.
 
 ---
 
-## 3. Extensiones de VSCode recomendadas
+## 3. Extensiones mínimas para VSCode
 
-### Para HTML, PHP, Laravel y Vue
+No es obligatorio tener todas, pero estas dos ayudan mucho con Laravel y PHP:
 
 - [Laravel](https://marketplace.visualstudio.com/items?itemName=laravel.vscode-laravel)  
-  Snippets y ayudas para trabajar con Laravel.
+  Snippets y soporte extra para proyectos Laravel.
 
 - [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client)  
-  Autocompletado y análisis para PHP.
+  Autocompletado y análisis de código PHP.
 
-- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)  
-  Para cuando trabajemos con Vue 3 en la parte SPA de la materia.
-
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)  
-  Autocompletado de clases si usamos Tailwind en el frontend.
-
-### Utilidades generales
-
-- [Activitus Bar](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.activitusbar)  
-  Para reorganizar la barra lateral de VSCode.
+### Opcionales (calidad de vida)
 
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)  
-  Cierra etiquetas HTML automáticamente.
-
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)  
-  Cambia la etiqueta de cierre cuando editas la de apertura.
 
-- [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)  
-  Convierte JSON a interfaces/clases (útil cuando trabajemos APIs).
-
-- [TypeScript Importer](https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter)  
-  Para proyectos Vue/TS más adelante.
-
-- [Better Dockerfile Syntax](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-dockerfile-syntax)  
-  Solo si usas Docker en entornos más avanzados (no en el taller corto).
+- Tema e iconos (solo estética):
+  - [Aura Dark Theme](https://marketplace.visualstudio.com/items?itemName=DaltonMenezes.aura-theme)  
+  - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
 ---
 
-## 4. Extensiones de Chrome
-
-- [JSON Viewer Awesome](https://chrome.google.com/webstore/detail/json-viewer-pro/eifflpmocdbdmepbjaopkkhbfmdgijcc)  
-  Muestra las respuestas JSON de forma ordenada cuando probemos APIs.
-
----
-
-## 5. Tema y personalización (opcional)
-
-No es obligatorio, pero mejora la experiencia de trabajo en VSCode:
-
-- [Aura Dark Theme](https://marketplace.visualstudio.com/items?itemName=DaltonMenezes.aura-theme)  
-  Tema oscuro recomendado.
-
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)  
-  Iconos para carpetas y archivos (Laravel, PHP, Vue, etc.).
-
----
-
-> ✅ Resumen rápido para el taller de 4–5 horas:  
-> **Obligatorio:** VSCode, PHP 8, Composer, XAMPP/Laragon (MySQL + phpMyAdmin), Node.js, navegador.  
-> **Opcional:** Git, Docker, TablePlus, Postman, temas e iconos.
-
+> ✅ Resumen rápido para el taller (obligatorio):  
+> VSCode + PHP 8.x + Composer + XAMPP/Laragon (MySQL + phpMyAdmin) + navegador.
