@@ -22,6 +22,10 @@ Estos deben estar instalados antes del taller:
 - [Composer](https://getcomposer.org/download/)  
   Para instalar Laravel y sus dependencias.
 
+- **Node.js 18.x o superior**  
+  Necesario para ejecutar **Vite** y compilar los assets (JS, CSS) de Laravel 12.  
+  Descargar desde: [https://nodejs.org](https://nodejs.org) (recomendado instalar la versión **LTS** para Windows).
+
 - **Servidor local (uno de los dos):**
   - [XAMPP](https://www.apachefriends.org/es/index.html)
 
@@ -67,4 +71,4 @@ No es obligatorio tener todas, pero estas dos ayudan mucho con Laravel y PHP:
 ---
 
 > ✅ Resumen rápido para el taller (obligatorio):  
-> VSCode + PHP 8.x + Composer + XAMPP (MySQL + phpMyAdmin) + navegador.
+> VSCode + PHP 8.x + Composer + **Node.js** + XAMPP (MySQL + phpMyAdmin) + navegador.
